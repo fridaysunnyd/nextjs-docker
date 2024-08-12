@@ -10,8 +10,8 @@ WORKDIR /app
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 RUN \
   if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
-  elif [ -f package-lock.json ]; then npm ci --registry=https://registry.npmmirror.com/; \
-  elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i --frozen-lockfile --registry=https://registry.npmmirror.com/; \
+  elif [ -f package-lock.json ]; then npm ci --registry=https://registry.npm.taobao.org/; \
+  elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i --frozen-lockfile --registry=https://registry.npm.taobao.org/; \
   else echo "Lockfile not found." && exit 1; \
   fi
 
