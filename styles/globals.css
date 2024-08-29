@@ -24,3 +24,120 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.mr-1{
+  margin-right: 1rem;
+}
+
+.mb-1{
+  margin-bottom: 1rem;
+}
+
+input[type=text]{
+  width: 20rem;
+  height: 2rem;
+  border-radius: 1rem;
+  border: 1px solid #ccc;
+  padding: 0 1rem;
+  font-size: 1rem;
+}
+
+input[type=text]:focus{
+  outline: none;
+  border: 2px solid rgb(255, 213, 0);
+}
+
+button:hover{
+  transform: scale(1.1);
+  transition: all 0.1s ease;
+}
+
+button{
+  height: 2rem;
+  background-color: orange;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  color: white;
+  padding: 0 1rem;
+}
+
+button.small{
+  height: 1.5rem;
+  font-size: .8rem;
+  padding: 0 .8rem;
+}
+
+button:focus{
+  outline: none;
+}
+
+.bg-primary{
+  background-color: rgb(255, 213, 0);
+}
+
+.bg-danger{
+  background-color: rgb(192, 60, 60);
+}
+
+.bg-second{
+  background-color: pink;
+}
+
+.bg-opacity0{
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.text-white{
+  color: white;
+}
+
+.text-black{
+  color: rgb(46, 39, 39);
+}
+
+.text-red{
+  color: rgb(189, 30, 30);
+}
+
+.todo-item{
+  padding: .2rem 2rem .2rem 1rem;
+  border-radius: .2rem;
+}
+
+.todo-item.del{
+  text-decoration: line-through;
+}
+
+.row-left{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.small-btn{
+  font-size: .9rem;
+}
+
+.small-btn:hover{
+  text-decoration: underline;
+}
+
+.card{
+  box-shadow: inset 0 0 0 2px rgba(132, 41, 114, 0.1);
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: rgba(210, 28, 173, 0.1);
+}
