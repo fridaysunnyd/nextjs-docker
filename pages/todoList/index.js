@@ -20,10 +20,50 @@ function TodoItem({ text, isEdit, updateItem }){
   )
 }
 
+let lock = true
+
 export default function TodoList() {
   const [data, setData] = useState('');
-  const [list, setList, delList, updateList,,unShiftArr] = useArr();
+  const [list, setList, delList, updateList,unShiftArr,resetArr] = useArr();
   const [updateIndex, setIndex] = useState(null)
+
+
+  useEffect(() => {
+    _get().finally(()=>{
+      lock = false
+    })
+  },[])
+
+  useEffect(() => {
+    if(!lock){
+      _update()
+    }
+  }, [list])
+
+  // create()
+  async function _create(){
+    await fetch(`/api/createTodoList`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify('[]'),
+    })
+  }
+
+  async function _update(){
+    await fetch('/api/todoList/1', {
+      method: 'PUT',
+      body: JSON.stringify(list),
+    })
+  }
+
+  async function _get(){
+    const res = await fetch('/api/todoList')
+    const data = await res.json()
+    const list = JSON.parse(data.list)
+
+    resetArr(list)
+  }
+
 
   const handleAdd = (item) =>{
     unShiftArr({

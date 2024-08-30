@@ -18,12 +18,12 @@ export const useArr = (data = []) => {
     setArr([...arr])
   }
 
-  const pushArr = (item) => {
-    setArr([...arr, item])
-  }
-
   const unShiftArr = (item) => {
     setArr([item, ...arr])
+  }
+
+  const resetArr = (list) => {
+    setArr(list)
   }
   
   return [    
@@ -31,7 +31,7 @@ export const useArr = (data = []) => {
     addArr,
     delArr,
     updateArr,
-    pushArr,
-    unShiftArr
+    unShiftArr,
+    resetArr
   ]
 }
